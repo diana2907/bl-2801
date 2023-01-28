@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
-import { getTodosState } from 'redux/selectors';
 import { Grid, GridItem, Todo } from 'components';
+import { getVisibleTodos } from 'redux/selectors';
 
 export const TodosList = () => {
-  const todos = useSelector(getTodosState);
+  const todos = useSelector(getVisibleTodos);
 
   return (
     <Grid>
