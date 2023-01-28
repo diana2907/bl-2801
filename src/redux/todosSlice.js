@@ -8,9 +8,10 @@ const todosSlice = createSlice({
   reducers: {
     addTodo(state, action) {
       state.items = [...state.items, action.payload];
-      console.log('action', action);
     },
-    deleteTodo(state, action) {},
+    deleteTodo(state, action) {
+      state.items = state.items.filter(item => item.id !== action.payload);
+    },
   },
 });
 
